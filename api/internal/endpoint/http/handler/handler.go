@@ -6,8 +6,8 @@ import (
 
 	"github.com/IndominusByte/danspro-be/endpoint/internal/config"
 	endpoint_http "github.com/IndominusByte/danspro-be/endpoint/internal/endpoint/http"
-	authrepo "github.com/IndominusByte/danspro-be/internal/repo/auth"
-	authusecase "github.com/IndominusByte/danspro-be/internal/usecase/auth"
+	authrepo "github.com/IndominusByte/danspro-be/endpoint/internal/repo/auth"
+	authusecase "github.com/IndominusByte/danspro-be/endpoint/internal/usecase/auth"
 	"github.com/creent-production/cdk-go/auth"
 	"github.com/creent-production/cdk-go/filestatic"
 	"github.com/go-chi/chi/v5"
