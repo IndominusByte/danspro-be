@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/IndominusByte/danspro-be/endpoint/internal/config"
+	"github.com/IndominusByte/danspro-be/api/internal/config"
 	"github.com/go-chi/chi/v5"
 )
 

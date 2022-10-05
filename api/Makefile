@@ -8,13 +8,13 @@ watch:
 	reflex -s -r "\.(go|json|html)$$" --decoration=none make run
 
 test:
-	docker exec -it danspro-go-auth-development go test ./tests/... -v
+	docker exec -it danspro-go-development go test ./tests/... -v
 
 log-dev:
-	docker logs -f --tail 10 danspro-go-auth-development
+	docker logs -f --tail 10 danspro-go-development
 
 log-prod:
-	docker logs -f --tail 10 danspro-go-auth-production
+	docker logs -f --tail 10 danspro-go-production
 
 dev:
 	bash ./scripts/local.development.sh

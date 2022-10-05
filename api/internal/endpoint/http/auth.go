@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/IndominusByte/danspro-be/endpoint/internal/config"
-	"github.com/IndominusByte/danspro-be/endpoint/internal/constant"
-	authentity "github.com/IndominusByte/danspro-be/internal/entity/auth"
+	"github.com/IndominusByte/danspro-be/api/internal/config"
+	"github.com/IndominusByte/danspro-be/api/internal/constant"
+	authentity "github.com/IndominusByte/danspro-be/api/internal/entity/auth"
 	"github.com/creent-production/cdk-go/auth"
 	"github.com/creent-production/cdk-go/response"
 	"github.com/go-chi/chi/v5"

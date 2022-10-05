@@ -4,10 +4,12 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/IndominusByte/danspro-be/endpoint/internal/config"
-	endpoint_http "github.com/IndominusByte/danspro-be/endpoint/internal/endpoint/http"
-	authrepo "github.com/IndominusByte/danspro-be/endpoint/internal/repo/auth"
-	authusecase "github.com/IndominusByte/danspro-be/endpoint/internal/usecase/auth"
+	"github.com/IndominusByte/danspro-be/api/internal/config"
+	endpoint_http "github.com/IndominusByte/danspro-be/api/internal/endpoint/http"
+	authrepo "github.com/IndominusByte/danspro-be/api/internal/repo/auth"
+	jobpositionsrepo "github.com/IndominusByte/danspro-be/api/internal/repo/job-positions"
+	authusecase "github.com/IndominusByte/danspro-be/api/internal/usecase/auth"
+	jobpositionsusecase "github.com/IndominusByte/danspro-be/api/internal/usecase/job-positions"
 	"github.com/creent-production/cdk-go/auth"
 	"github.com/creent-production/cdk-go/filestatic"
 	"github.com/go-chi/chi/v5"
@@ -65,6 +67,13 @@ func (s *Server) MountHandlers() error {
 	}
 	authUsecase := authusecase.NewAuthUsecase(authRepo)
 	endpoint_http.AddAuth(s.Router, authUsecase, s.redisCli, s.cfg)
+
+	jobPositionsRepo, err := jobpositionsrepo.New(s.db)
+	if err != nil {
+		return err
+	}
+	jobPositionsUsecase := jobpositionsusecase.NewJobPositionsUsecase(jobPositionsRepo, authRepo)
+	endpoint_http.AddJobPositions(s.Router, jobPositionsUsecase, s.redisCli)
 
 	return nil
 }

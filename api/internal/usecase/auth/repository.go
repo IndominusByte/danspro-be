@@ -3,7 +3,7 @@ package auth
 import (
 	"context"
 
-	authentity "github.com/IndominusByte/danspro-be/endpoint/internal/entity/auth"
+	authentity "github.com/IndominusByte/danspro-be/api/internal/entity/auth"
 )
 
 type authRepo interface {

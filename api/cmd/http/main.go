@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/IndominusByte/danspro-be/endpoint/internal/config"
+	"github.com/IndominusByte/danspro-be/api/internal/config"
 )
 
 func main() {

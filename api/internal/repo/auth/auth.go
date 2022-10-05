@@ -3,7 +3,7 @@ package auth
 import (
 	"context"
 
-	authentity "github.com/IndominusByte/danspro-be/endpoint/internal/entity/auth"
+	authentity "github.com/IndominusByte/danspro-be/api/internal/entity/auth"
 	"github.com/jmoiron/sqlx"
 	"golang.org/x/crypto/bcrypt"
 )
